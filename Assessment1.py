@@ -25,7 +25,7 @@ O(N!)
 
 
 
-d =  deque()   #Alter this code
+d =  list()   #Alter this code
 
 #more developer code was here but you don't need to know about it.
 
@@ -33,13 +33,13 @@ def Question1Example(d , K:int ) : #DO NOT ALTER THIS CODE
 	for i in range(K):   #Do not Alter this code
     		d[ len(d)//2   ] = 6  #Do not Alter this code
 def Question1_a():
-    return "O(?)If using N use N and if power use N** " # If using N use N and if power use N**"
+    return "O(N)" # If using N use N and if power use N**"
 def Question1_c():
-    return "O(?) If using N use N and if power use N**" # If using N use N and if power use N**"
+    return "O(1)" # If using N use N and if power use N**"
 
 
 #------------------------------------------------
-Q2 =  list() # list() #Alter this code
+Q2 =  deque() # list() #Alter this code
 
 #the collection is filled in the assessment code.
 #there is more code showing extensive use of list access.
@@ -49,17 +49,17 @@ def Question2Example( Q2, K:int ) :
     		Q2.insert(0,i) #Do not Alter this code
 
 def Question2_a():
-    return "O(?) If using N use N and if power use N**"
+    return "O(N)"
 
 def Question2_c():
-    return "O(?)If using N use N and if power use N**"
+    return "O(1)"
 
 #------------------------------------------------
-Q3 = list()   # OK to alter this
+Q3 = set()   # OK to alter this
 
 def Question3ExampleADD( Q3, item :int ) :
     # OK TO CHANGE THE CODE BELOW TO HELP
-    Q3.append(item )
+    Q3.add(item )
 
 def Question3ExampleFind( Q3 , What ):
     #OK TO CHANGE THE CODE BELOW TO HELP
@@ -70,17 +70,17 @@ def Question3ExampleFind( Q3 , What ):
     return False #not found
 
 def Question3_a():
-    return "O(?) If using N use N and if power use N**"
+    return "O(N)"
 
 def Question3_c():
-    return "O(?)If using N use N and if power use N**"
+    return "O(1)"
 #------------------------------------------------
 Q4 = list()  #[ "fhfh" , "djdjd", "wewew"]
 Q4_index = list() # [ 0, 1, 2]
 def Question4ExampleADD( Q4, item :str ) :
     # OK TO CHANGE THE CODE BELOW TO HELP
-    Q4.append( item )
-    Q4_index.append( len( Q4 ) )
+    Q4.append(item)
+    Q4_index.append(len(Q4))
 
 # So if user asks for What =  "djdjd" return 1
 def Question4ExampleFind( Q4 , What ):
@@ -88,46 +88,53 @@ def Question4ExampleFind( Q4 , What ):
     index = 0
     for it in Q4:
         if it == What :
+
             return index
         index += 1
     #end for
+    print("no esta")
     return -1  #not found
 # What is the O notation for Question4ExampleFind
 def Question4_a():
-    return "O(?) If using N use N and if power use N**"
+    return "O(N)"
 # What is the O notation for Question4ExampleFind after you fix it
 def Question4_c():
-    return "O(?)If using N use N and if power use N**"
+    return "O(?)"
 
-Q5a = deque()
-Q5b = deque()
-def Question5Add(  Q5a , whattoAdd_A , Q5b,  whatToAdd_B ):
+Q5a = list()
+Q5b = list()
+def Question5Add(Q5a, whattoAdd_A, Q5b,  whatToAdd_B):
     # OK TO change the code below to help
-    Q5a.append( whattoAdd_A)
-    Q5b.append( whatToAdd_B )
+    Q5a.append(whattoAdd_A)
+    Q5b.append(whatToAdd_B)
 
-#return a itterable collection of everything in A which is in B
+
+#return an iterable collection of everything in A which is in B
 # Order is not important in the collection
 def Question5Find( Q5a , Q5b )  :
-    incommon = [ ]
+    incommon = []
 
     for a in Q5a :
-        for b in Q5b :
-            if a == b :
-                if a not in incommon:
-                    incommon.append(a)
+        if a in Q5b :
+            incommon.append(a)
+    #for a in Q5a :
+    #    for b in Q5b :
+    #        if a == b :
+    #            if a not in incommon:
+    #                incommon.append(a)
                 # end if
             #end if
         #end for
     #end for
+
     return incommon
 
 def Question5_a():
-        return "O(?) If using N use N and if power use N**"
+        return "O(N**2)"
 
     # What is the O notation for Question4ExampleFind after you fix it
 def Question5_c():
-        return "O(?) If using N use N and if power use N**"
+        return "O(1)"
 
 Q6 = deque()
 def Question6WhatIsMyONotation(  items ):   # DO NOT ALTER THIS CODE
@@ -136,14 +143,14 @@ def Question6WhatIsMyONotation(  items ):   # DO NOT ALTER THIS CODE
         Q6.insert(  len( Q6) //2 , it )
 
 def Question6():
-            return "O(?) If using N use N and if power use N**"
+            return "O(N**2)"
 
 Q7 = set()
 def Question7WhatIsMyONotation( item )-> bool:
     return item in Q7
 
 def Question7():
-    return "O(?) If using N use N and if power use N**"
+    return "O(1)"
 
 
 Q8 = list() # don't change this
@@ -156,7 +163,7 @@ def Question8WhatIsMyONotation( Q8 , item )-> int :
             return -1  # Item not found
 
 def Question8():
-    return "O(?) If using N use N and if power use N**"
+    return "O(LOG(N))"
 
 
 Q9  = [random.uniform(-100, 100) for _ in range(10000)]
